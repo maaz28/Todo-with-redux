@@ -9,7 +9,7 @@ class GetStartedComponent extends Component {
     }
     render() {
         return (
-            <div style = {this.customStyle}> <a className="waves-effect blue-grey darken-4 btn-large" onClick={this.props.handler} >Button</a></div>
+            <div style = {this.customStyle}> <a className="waves-effect blue-grey darken-4 btn-large" onClick={this.props.handler} >Get Started</a></div>
         )
     }
    

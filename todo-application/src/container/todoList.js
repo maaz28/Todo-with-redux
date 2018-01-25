@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TodoListComponent from '../components/todoList'
 import { removeTodo, editHandler, updateHandler, cancelHandler } from '../store/actions/action';
+
 class TodoList extends React.Component {
     render() {
         return (

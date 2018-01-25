@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-materialize';
 
 class TodoComponent extends React.Component {
 
@@ -7,15 +8,15 @@ class TodoComponent extends React.Component {
             <div>
                 <input type = 'text' placeholder = 'Enter Task Here !' ref = 'task'/>
                 
-                <button onClick = {this.addTodo.bind(this)}>AddTodo</button>
-                <button onClick = {this.removeAll.bind(this)}>RemoveAll</button>
+                <Button onClick = {this.addTodo.bind(this)}  className="btn waves-effect waves-light" type="submit" name="action">Add</Button>
+                <Button onClick = {this.removeAll.bind(this)} className = 'red darken-4'>RemoveAll</Button>
 
             </div>
         )
     }
     addTodo(){
-        console.log(this.refs.task.value);
         this.props.saveTaskInTheStore(this.refs.task.value);
+        this.refs.task.value = '';
     }
 
     removeAll(){

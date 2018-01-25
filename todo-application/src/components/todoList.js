@@ -1,16 +1,24 @@
 import React from 'react';
+import { Button } from 'react-materialize';
+
 
 class TodoListComponent extends React.Component {
     render() {
+        var style = {
+            border : '1px solid grey',
+            display : 'inline-block',
+            width: '1100px',
+            height : '30px'
+          };
         return (
                 <div>
                     {(this.props.flag) ?
                         <ul>
                             {this.props.todos.map((val, ind) => {
                                 return <li key={ind}>
-                                    <span > {val} {ind} </span>
-                                    <button onClick = {this.removeHandler.bind(this, ind)}>remove </button>
-                                    <button onClick = {this.editHandler.bind(this, ind, val)}>Edit </button>
+                                    <div style = {style}> {val} </div>
+                                    <Button onClick = {this.removeHandler.bind(this, ind)} className= 'red darken-4'>Del </Button>
+                                    <Button onClick = {this.editHandler.bind(this, ind, val)} className = ''>Edit </Button>
                                 </li>
                             })}
                         </ul>
